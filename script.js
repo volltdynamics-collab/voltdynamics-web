@@ -40,14 +40,25 @@ document.querySelectorAll('.service-card, .why-item, .gallery-item, .contact-ite
 });
 
 // ========== EJEMPLO: MANEJO DEL FORMULARIO (solo consola, sin envío real) ==========
+// ========== ENVÍO REAL A WHATSAPP ==========
 const formBtn = document.querySelector('.contact-form .btn-primary');
+
 if (formBtn) {
   formBtn.addEventListener('click', (e) => {
     e.preventDefault();
-    const nombre = document.querySelector('.contact-form input[type="text"]')?.value || 'sin nombre';
-    const proyecto = document.querySelector('.contact-form select')?.value || 'no especificado';
-    const descripcion = document.querySelector('.contact-form textarea')?.value || 'sin descripción';
-    console.log('📝 Datos del formulario (demo):', { nombre, proyecto, descripcion });
-    alert('✅ Demo: Tus datos se enviarían por WhatsApp. En producción, conecta el backend.');
+
+    const nombre = document.querySelector('.contact-form input[type="text"]').value;
+    const proyecto = document.querySelector('.contact-form select').value;
+    const descripcion = document.querySelector('.contact-form textarea').value;
+
+    const mensaje = `Hola, soy ${nombre}%0A%0A` +
+      `Tipo de proyecto: ${proyecto}%0A%0A` +
+      `Descripción:%0A${descripcion}`;
+
+    const telefono = '51985364109';
+
+    const url = `https://wa.me/${telefono}?text=${mensaje}`;
+
+    window.open(url, '_blank');
   });
 }
