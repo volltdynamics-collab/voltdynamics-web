@@ -57,6 +57,11 @@ body {
   font-weight: 800;
   letter-spacing: -0.02em;
   color: #fff;
+  text-decoration: none;
+}
+
+.nav-logo:visited {
+  color: #fff;
 }
 
 .nav-logo span {
