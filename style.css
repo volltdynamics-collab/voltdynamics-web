@@ -53,6 +53,9 @@ body {
 }
 
 .nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
   font-size: 1.4rem;
   font-weight: 800;
   letter-spacing: -0.02em;
@@ -64,7 +67,13 @@ body {
   color: #fff;
 }
 
-.nav-logo span {
+/* El texto "Volt" dentro de .logo-text debe ser blanco */
+.nav-logo .logo-text {
+  color: #fff;
+}
+
+/* Solo el span interno (Dynamics) será azul */
+.nav-logo .logo-text span {
   color: var(--volt-blue);
 }
 
@@ -966,4 +975,10 @@ footer {
   .products-grid {
     grid-template-columns: 1fr;
   }
+}
+
+.logo-img {
+  height: 60px;        /* Ajusta según tu logo */
+  width: auto;
+  display: block;
 }
